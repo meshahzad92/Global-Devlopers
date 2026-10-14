@@ -64,6 +64,7 @@ const allTeam: Leader[] = [
   {
     id: "l4",
     name: "Muhammad Saad",
+    portrait: images.team.saad,
     role: "Managing Director",
     bio: ["Drives client relations and business development, keeping every buyer and partner informed at each step."],
     verified: true,

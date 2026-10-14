@@ -15,4 +15,7 @@ export const images = {
     trade: "/images/projects/global-trade-center.jpg",
   },
   ceo: "/images/leadership/mian-muhammad-arshad.jpg",
+  team: {
+    saad: "/images/leadership/muhammad-saad.jpg",
+  },
 } as const;
