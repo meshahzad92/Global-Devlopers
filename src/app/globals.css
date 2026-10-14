@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Global Developers — design tokens
+   --------------------------------------------------------------- */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --color-forest: #182b29;
+  --color-forest-deep: #0f201e;
+  --color-forest-darker: #092521;
+  --color-gold: #c4a574;
+  --color-gold-muted: #ad8c58;
+  --color-gold-light: #e9d8b9;
+  --color-gold-deep: #8a6a3b; /* gold for small text on light backgrounds (AA) */
+  --color-ivory: #f6f4ef;
+  --color-charcoal: #343a40;
+  --color-soft-gray: #777b78;
+  --color-line: #e7e2d8;
+
+  --color-background: #f6f4ef;
+  --color-foreground: #1d2a28;
+  --color-card: #ffffff;
+  --color-card-foreground: #1d2a28;
+  --color-muted: #efebe3;
+  --color-muted-foreground: #66706c;
+  --color-border: #e7e2d8;
+  --color-ring: #c4a574;
+
+  --color-on-dark: #f6f4ef;
+  --color-on-dark-muted: #a9b3ae;
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--color-foreground);
+    letter-spacing: -0.005em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-forest-deep);
+  }
+}
+
+/* ---------------------------------------------------------------
+   Utilities used across the site
+   --------------------------------------------------------------- */
+@utility container-gd {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  .on-dark &,
+  &.on-dark {
+    color: var(--color-gold);
+  }
+}
+
+@utility hero-overlay {
+  background:
+    linear-gradient(90deg, rgb(15 32 30 / 0.94) 0%, rgb(15 32 30 / 0.78) 32%, rgb(15 32 30 / 0.25) 62%, rgb(15 32 30 / 0) 85%),
+    linear-gradient(0deg, rgb(15 32 30 / 0.55) 0%, rgb(15 32 30 / 0) 35%);
+}
+
+@utility fade-up {
+  animation: var(--animate-fade-up);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Dark sections switch eyebrow to bright gold for contrast */
+.bg-forest .eyebrow,
+.bg-forest-deep .eyebrow,
+.bg-forest-darker .eyebrow {
+  color: var(--color-gold);
+}
+
+/* Lightbox theming */
+.yarl__root {
+  --yarl__color_backdrop: rgb(9 20 18 / 0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
