@@ -46,11 +46,7 @@ export function Header() {
                 key={n.href}
                 href={n.href}
                 aria-current={active ? "page" : undefined}
-                className={cn(
-                  "relative py-1 text-[13px] text-on-dark/85 transition-colors hover:text-gold",
-                  "after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:scale-x-100",
-                  active && "text-gold after:scale-x-100",
-                )}
+                className={cn("text-[13px] text-on-dark/85 transition-colors hover:text-gold", active && "text-gold")}
               >
                 {n.label}
               </Link>

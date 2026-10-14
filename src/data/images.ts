@@ -2,7 +2,6 @@
  * Central image registry. All files live in /public/images.
  * All photos are the approved design images, except the two team portraits
  * (leadership/member-*.jpg), which are generated placeholders (`npm run placeholders`).
- * construction/site-2..4.jpg are crops of construction.jpg — replace with real site photos when available.
  */
 export const images = {
   hero: "/images/hero/hero.jpg",
@@ -14,12 +13,6 @@ export const images = {
   pageContact: "/images/projects/global-business-tower.jpg",
   og: "/images/branding/og-image.jpg",
   constructionMain: "/images/construction/construction.jpg",
-  construction: [
-    "/images/construction/construction.jpg",
-    "/images/construction/site-2.jpg",
-    "/images/construction/site-3.jpg",
-    "/images/construction/site-4.jpg",
-  ],
   projects: {
     residences: "/images/projects/global-residences.jpg",
     tower: "/images/projects/global-business-tower.jpg",

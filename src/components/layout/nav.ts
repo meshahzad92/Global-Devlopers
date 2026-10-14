@@ -16,7 +16,6 @@ export const footerNav = [
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
   { href: "/leadership", label: "Leadership" },
-  { href: "/testimonials", label: "Testimonials" },
 ] as const;
 
 export function isActive(pathname: string, href: string) {

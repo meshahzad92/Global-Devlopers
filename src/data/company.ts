@@ -49,17 +49,10 @@ export const stats: Stat[] = [
 ];
 
 export const values = [
-  { title: "Integrity", text: "Honest communication and transparent dealings at every stage of a project." },
-  { title: "Quality", text: "World-class design and uncompromising building standards in everything we deliver." },
-  { title: "Innovation", text: "Modern architecture, smart planning and materials that stand the test of time." },
-  { title: "Community", text: "Spaces designed around people — places to live, work, and thrive together." },
-];
-
-export const milestones = [
-  { year: "Founded", title: "A vision takes shape", text: "Global Developers is established with a commitment to quality-first real estate." },
-  { year: "First Launch", title: "Our first residential community", text: "We deliver our first premium residential development." },
-  { year: "Expansion", title: "Entering commercial real estate", text: "Our portfolio grows to include landmark commercial towers." },
-  { year: "Today", title: "Building multiple cities", text: "Ongoing and upcoming developments across major cities." },
+  { title: "Integrity", text: "We communicate honestly and deliver on every promise." },
+  { title: "Quality", text: "World-class materials, design and construction standards." },
+  { title: "Innovation", text: "Modern engineering and smart building technologies." },
+  { title: "Community", text: "We design places that bring people together." },
 ];
 
 export const verifiedStats = () => stats.filter((s) => s.verified || SHOW_SAMPLE_CONTENT);

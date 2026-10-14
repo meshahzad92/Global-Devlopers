@@ -5,7 +5,7 @@ import { featuredTestimonials } from "@/data/testimonials";
 export function Testimonials() {
   if (featuredTestimonials.length === 0) return null;
   return (
-    <section className="py-16 md:py-24">
+    <section className="border-t bg-ivory py-20">
       <div className="container-gd">
         <TestimonialCarousel items={featuredTestimonials} heading={<SectionHead eyebrow="Testimonials" title="Trusted by Visionaries" />} />
       </div>

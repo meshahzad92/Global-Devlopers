@@ -12,7 +12,7 @@ const allUpdates: Update[] = [
     date: "2024-05-15",
     description: "The core and slab works for level 12 are complete, keeping the tower on schedule for its structural top-out.",
     coverImage: images.constructionMain,
-    images: [images.constructionMain, images.construction[1], images.construction[2], images.construction[3]],
+    images: [images.constructionMain],
     category: "Construction Progress",
     verified: false,
   },

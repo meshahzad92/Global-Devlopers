@@ -15,7 +15,7 @@ export default function UpdatesPage() {
   const [latest, ...rest] = updates;
   return (
     <>
-      <PageHero eyebrow="Construction Progress" title="Real Progress. Real Results." text="Stay updated with the latest construction milestones and company news." image={images.construction[0]} />
+      <PageHero eyebrow="Construction Progress" title="Real Progress. Real Results." text="Stay updated with the latest construction milestones and company news." image={images.constructionMain} />
       <section className="py-16 md:py-20">
         <div className="container-gd">
           {!latest ? (
