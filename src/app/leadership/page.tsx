@@ -20,7 +20,7 @@ export default function LeadershipPage() {
       <PageHero image={images.interior} eyebrow="Leadership" title="The People Behind Our Vision" />
       <section className="bg-ivory py-20">
         <div className="container-gd grid items-center gap-12 md:grid-cols-[0.9fr_1.3fr]">
-          <Image src={ceo.portrait} alt={ceo.name} width={896} height={1024} sizes="(min-width: 768px) 40vw, 100vw" className="aspect-[4/5] w-full rounded-sm object-cover shadow-xl" />
+          <Image src={ceo.portrait} alt={ceo.name} width={896} height={1024} priority sizes="(min-width: 768px) 40vw, 100vw" className="aspect-[4/5] w-full rounded-sm object-cover shadow-xl" />
           <div>
             <SectionHead eyebrow="CEO Message" title="A Vision for Lasting Impact." />
             <Quote className="mt-6 size-10 fill-gold text-gold" aria-hidden="true" />

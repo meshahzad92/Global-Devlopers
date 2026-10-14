@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     }),
   };
   return (
-    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${cormorant.variable} ${manrope.variable}`}>
       <body>
         <a href="#main" className="sr-only z-[60] bg-gold px-4 py-2 text-forest-deep focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
           Skip to content
