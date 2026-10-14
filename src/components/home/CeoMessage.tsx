@@ -9,7 +9,7 @@ export function CeoMessage() {
   return (
     <section className="bg-ivory py-20">
       <div className="container-gd grid items-center gap-10 lg:grid-cols-[0.9fr_1.2fr_0.9fr]">
-        <Image src={ceo.portrait} alt={`${ceo.name}, ${ceo.role}`} width={896} height={1024} sizes="(min-width: 1024px) 30vw, 100vw" className="aspect-[4/5] w-full rounded-sm object-cover shadow-lg" />
+        <Image src={ceo.portrait} alt={`${ceo.name}, ${ceo.role}`} width={1122} height={1402} sizes="(min-width: 1024px) 30vw, 100vw" className="aspect-[4/5] w-full rounded-sm object-cover shadow-lg" />
         <div>
           <SectionHead eyebrow="CEO Message" title="A Vision for Lasting Impact." />
           {ceo.message?.map((m) => (

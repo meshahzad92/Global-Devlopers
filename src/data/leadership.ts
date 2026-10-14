@@ -5,12 +5,12 @@ import { isPublic, publicOnly } from "./config";
 type Ceo = Leader & { portrait: string };
 
 /**
- * SAMPLE leadership (verified: false). The CEO name, portrait and message below are
- * placeholders from the design mock-up — replace with the real CEO's details.
+ * CEO name and portrait are real. The bio, message, quote and achievements below are still
+ * SAMPLE copy (verified: false) from the design mock-up — replace with the CEO's own words.
  */
 const sampleCeo: Ceo = {
   id: "ceo",
-  name: "Ahmed Khan",
+  name: "Mian Muhammad Arshad",
   role: "Chief Executive Officer",
   portrait: images.ceo,
   bio: [
@@ -35,8 +35,8 @@ const sampleCeo: Ceo = {
 
 const placeholderCeo: Ceo = {
   id: "ceo",
-  name: "Chief Executive Officer",
-  role: "Global Developers",
+  name: "Mian Muhammad Arshad",
+  role: "Chief Executive Officer",
   portrait: images.ceo,
   bio: ["Leadership profile coming soon."],
   message: ["A message from our leadership will be published here shortly."],
@@ -49,17 +49,24 @@ export const ceo: Ceo = isPublic(sampleCeo) ? sampleCeo : placeholderCeo;
 const allTeam: Leader[] = [
   {
     id: "l2",
-    name: "Ayesha Siddiqui",
-    role: "Director, Design & Planning",
+    name: "Mian Muhammad Farooq",
+    role: "COO",
     bio: ["Leads architecture and master planning with a focus on sustainable, human-centred spaces."],
-    verified: false,
+    verified: true,
   },
   {
     id: "l3",
-    name: "Usman Tariq",
+    name: "Mian Muhammad Usman",
     role: "Director, Construction",
     bio: ["Oversees delivery, quality control and safety across every Global Developers site."],
-    verified: false,
+    verified: true,
+  },
+  {
+    id: "l4",
+    name: "Muhammad Saad",
+    role: "Managing Director",
+    bio: ["Drives client relations and business development, keeping every buyer and partner informed at each step."],
+    verified: true,
   },
 ];
 
