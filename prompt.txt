@@ -1,0 +1,1188 @@
+# MASTER DEVELOPMENT PROMPT — GLOBAL DEVELOPERS
+
+## ROLE AND OBJECTIVE
+
+You are a senior frontend architect, expert Next.js developer, and luxury real estate website designer with extensive experience building premium, production-ready corporate websites.
+
+Your task is to develop a complete, visually exceptional, responsive, frontend-only website for a real estate development company named **Global Developers**.
+
+**CRITICAL: I have attached a reference image showing the approved homepage design. This image is the primary visual source of truth for the entire website.**
+
+The client has approved the reference image's overall appearance, including its layout, colors, typography, photography style, section ordering, spacing, visual hierarchy, and premium architectural identity.
+
+Your responsibility is to translate that design into a fully functioning website while maintaining exceptionally high visual fidelity.
+
+Do not create a different design. Do not introduce your own unrelated design language. Reproduce the reference image as closely as possible while making the implementation responsive, accessible, maintainable, and production-ready.
+
+The reference is a long desktop homepage screenshot. Carefully analyze the entire image from top to bottom before coding.
+
+---
+
+# 1. PROJECT INFORMATION
+
+**Company:** Global Developers
+
+**Industry:** Real Estate Development and Construction
+
+**Project categories:**
+- Residential developments
+- Commercial developments
+
+**Website purpose:**
+- Establish a premium corporate identity.
+- Showcase ongoing, upcoming, and completed developments.
+- Display project details, photographs, and construction progress.
+- Introduce the CEO and company leadership.
+- Publish verified testimonials and business endorsements.
+- Share construction updates and company announcements.
+- Allow visitors to contact the company directly.
+
+**Language:** English
+
+**Website type:** Corporate portfolio and project showcase
+
+**Backend:** None
+
+**Database:** None
+
+**Authentication:** None
+
+**Content management:** Local TypeScript data files
+
+**Deployment:** Vercel, using a commercially permitted hosting plan.
+
+All pages should be statically generated wherever possible.
+
+---
+
+# 2. TECHNOLOGY STACK
+
+Use the following technologies:
+
+- Next.js with App Router
+- TypeScript with strict typing
+- Tailwind CSS
+- Lucide React for icons
+- Motion for subtle animations
+- shadcn/ui for suitable accessible UI primitives
+- Next.js Image component
+- Yet Another React Lightbox or an equivalent accessible image gallery
+- Local TypeScript files for structured content
+- Google Fonts through next/font
+- Git and GitHub
+
+Use the latest compatible stable versions.
+
+Avoid unnecessary dependencies.
+
+Do not introduce a backend, database, authentication provider, CMS, or API server.
+
+Use React Server Components by default and Client Components only where interaction is required.
+
+The website must be compatible with static generation, including dynamic project routes.
+
+---
+
+# 3. VISUAL REFERENCE — STRICT DESIGN REQUIREMENTS
+
+The attached image is the approved homepage design.
+
+Before implementation, inspect and understand:
+
+1. Header proportions and navigation alignment.
+2. Dark forest green backgrounds.
+3. Champagne gold accents and buttons.
+4. Warm ivory section backgrounds.
+5. Elegant serif headings.
+6. Modern sans-serif body typography.
+7. Architectural photography and image crops.
+8. Alternating dark and light sections.
+9. Card layouts and borders.
+10. Section spacing and content alignment.
+11. CEO presentation and testimonial styling.
+12. Footer structure and overall page rhythm.
+
+**Do not substitute the reference design with a generic real estate template.**
+
+The desktop implementation should match the reference's visual composition as closely as possible.
+
+The reference image may contain fictional company names, project figures, testimonials, portraits, and contact details. Treat these as illustrative placeholders, not verified company information.
+
+Never publish them as real facts.
+
+---
+
+# 4. DESIGN SYSTEM
+
+## 4.1 Color palette
+
+Use these exact primary colors:
+
+| Color | Hex | Usage |
+|---|---|---|
+| Deep Forest Green | #182B29 | Header, dark sections, footer |
+| Champagne Gold | #C4A574 | Buttons, highlights, icons |
+| Warm Ivory | #F6F4EF | Main background |
+| Charcoal | #343A40 | Body text |
+| White | #FFFFFF | Cards and light surfaces |
+
+Supporting colors may include:
+
+- Dark Forest: #092521
+- Muted Gold: #AD8C58
+- Light Gold: #E9D8B9
+- Soft Gray: #777B78
+- Light Border: #E7E2D8
+
+Use gradients only where needed for hero image readability or subtle visual depth.
+
+Avoid bright colors, neon accents, exaggerated shadows, and excessive glassmorphism.
+
+## 4.2 Typography
+
+Headings: Playfair Display
+
+Body: Inter
+
+Suggested desktop typography:
+
+- Hero heading: 64–76px
+- Main section heading: 42–52px
+- Card heading: 22–26px
+- Body text: 16–18px
+- Eyebrow labels: 11–13px, uppercase, letter-spaced
+
+Use responsive font sizes with CSS clamp() where appropriate.
+
+Headings should feel elegant, editorial, and architectural.
+
+## 4.3 Layout
+
+Maximum content width: 1280px
+
+Use consistent horizontal padding.
+
+Desktop section spacing: approximately 96–120px, adjusted to match the reference.
+
+Tablet spacing: approximately 64–80px.
+
+Mobile spacing: approximately 48–64px.
+
+Use CSS Grid and Flexbox.
+
+Avoid excessive rounded corners.
+
+Cards should have subtle borders, refined shadows, and elegant hover interactions.
+
+## 4.4 Buttons
+
+Primary button:
+- Champagne gold background.
+- Dark text.
+- Small border radius.
+- Arrow icon where appropriate.
+- Elegant hover transition.
+
+Secondary button:
+- Transparent background.
+- Contrasting border.
+- Light text on dark sections.
+- Subtle hover treatment.
+
+Buttons must be keyboard accessible.
+
+## 4.5 Animations
+
+Use subtle animations only:
+
+- Fade-in on scroll.
+- Gentle upward reveal.
+- Image zoom on hover.
+- Smooth button transitions.
+- Underline animations on navigation.
+- Optional subtle hero motion.
+
+Do not use excessive parallax or dramatic motion effects.
+
+Respect prefers-reduced-motion.
+
+---
+
+# 5. WEBSITE ROUTES
+
+Implement these pages:
+
+1. `/` — Homepage
+2. `/about` — About Us
+3. `/projects` — All Projects
+4. `/projects/[slug]` — Individual Project Details
+5. `/leadership` — CEO & Leadership
+6. `/testimonials` — Testimonials
+7. `/gallery` — Gallery
+8. `/updates` — Construction and Company Updates
+9. `/contact` — Contact Us
+
+Also implement:
+- Custom 404 page
+- Dynamic sitemap
+- robots.txt
+- SEO metadata
+- Open Graph metadata
+
+All routes must work correctly when deployed.
+
+---
+
+# 6. HOMEPAGE — PIXEL-CLOSE REFERENCE IMPLEMENTATION
+
+This is the most important page.
+
+Implement the homepage sections in the exact order shown in the reference image.
+
+## SECTION 1 — HEADER AND NAVIGATION
+
+Create a dark forest green navigation bar.
+
+Left:
+- Global Developers logo.
+- Elegant gold architectural building symbol.
+- Company name in refined typography.
+
+Center/right navigation:
+- Home
+- About Us
+- Projects
+- Leadership
+- Gallery
+- Updates
+- Contact
+
+Right:
+- Champagne gold "Get in Touch" button with arrow.
+
+Behavior:
+- Sticky header.
+- Active navigation indication.
+- Subtle scroll styling.
+- Projects dropdown if useful.
+- Responsive mobile menu.
+- Accessible keyboard navigation.
+
+The header must closely resemble the reference image.
+
+## SECTION 2 — HERO
+
+Create a premium, full-width architectural hero.
+
+The reference features:
+- Luxury modern commercial architecture.
+- Golden-hour lighting.
+- Dark gradient on the left.
+- Large elegant heading.
+- Two CTA buttons.
+- Scroll indicator.
+
+Hero eyebrow:
+
+GLOBAL DEVELOPERS
+
+Main heading:
+
+**Building Landmarks.
+Creating Legacies.**
+
+Highlight "Creating Legacies." using champagne gold.
+
+Description:
+
+"Thoughtfully designed residential and commercial developments, built with a commitment to quality, innovation, and enduring value."
+
+Buttons:
+- Explore Our Projects
+- Contact Us
+
+Include a subtle scroll indicator.
+
+Use an architectural image that matches the composition of the reference as closely as possible.
+
+Do not use the entire supplied screenshot as a background.
+
+Use separate, appropriately licensed architectural assets. If original assets are unavailable, use clearly identified temporary images.
+
+The hero must work beautifully on desktop and mobile.
+
+## SECTION 3 — WHO WE ARE
+
+Warm ivory background.
+
+Two-column layout.
+
+Left:
+- Small gold eyebrow: WHO WE ARE
+- Large serif heading:
+
+"Shaping Better Communities for a Brighter Tomorrow."
+
+- Company introduction.
+- Learn More About Us link.
+
+Right:
+- Large premium architectural photograph.
+- Overlapping dark forest green statistics/identity card.
+- Gold outline or refined border treatment.
+
+Match the reference image's composition.
+
+Do not claim a specific number of years in business until verified.
+
+## SECTION 4 — COMPANY STATISTICS
+
+Full-width dark forest green strip.
+
+Four columns.
+
+Suggested fields:
+- Years of Excellence
+- Projects Delivered & In Development
+- Clients & Partners
+- Commitment to Quality
+
+Use gold line icons and elegant figures.
+
+All numbers must come from a central company data file.
+
+If a statistic is unverified, hide that statistic or display a neutral non-numeric value.
+
+Do not invent company achievements.
+
+Use vertical dividers between statistics on desktop.
+
+Stack appropriately on mobile.
+
+## SECTION 5 — FEATURED PROJECTS
+
+Warm ivory background.
+
+Eyebrow: FEATURED PROJECTS
+
+Heading: Our Developments
+
+Right:
+- View All Projects link.
+
+Show three project cards on desktop.
+
+Each card:
+- Large architectural image.
+- Status badge.
+- Project title.
+- Short tagline.
+- Project type.
+- Location.
+- Circular arrow button.
+
+Statuses:
+- Ongoing
+- Upcoming
+- Completed
+
+Use visual styling similar to the reference.
+
+Cards should have subtle hover lift and image zoom effects.
+
+Clicking a card opens its project details page.
+
+Featured projects must be loaded from local project data, not hardcoded in the component.
+
+## SECTION 6 — WHY GLOBAL DEVELOPERS
+
+Warm ivory background.
+
+Heading:
+
+"Built on Trust.
+Driven by Excellence."
+
+Supporting paragraph on the right.
+
+Four feature cards:
+
+1. Prime Locations
+2. Quality Construction
+3. Transparent Process
+4. Sustainable Growth
+
+Each feature should contain:
+- Gold-toned icon.
+- Heading.
+- Short explanation.
+
+Match the reference's four-card layout and minimal aesthetic.
+
+## SECTION 7 — CONSTRUCTION PROGRESS
+
+Dark forest green background.
+
+Eyebrow: CONSTRUCTION PROGRESS
+
+Heading:
+
+"Real Progress. Real Results."
+
+Create a premium photography layout.
+
+Left:
+- Large construction photograph.
+- Overlaid project update information card.
+
+Middle:
+- Three smaller construction photographs arranged vertically.
+
+Right:
+- Eyebrow: TRACKING OUR JOURNEY
+- Heading: From Vision to Reality.
+- Supporting description.
+- View Construction Updates button.
+
+Use actual project updates from the data model.
+
+Each update must support:
+- Project association.
+- Date.
+- Title.
+- Description.
+- Image gallery.
+- Construction milestone.
+
+Do not generate fictional construction dates or progress claims in published content.
+
+## SECTION 8 — CEO MESSAGE
+
+Warm ivory background.
+
+Create a refined three-part layout.
+
+Left:
+- Professional CEO portrait.
+
+Middle:
+- Eyebrow: CEO MESSAGE
+- Heading: A Vision for Lasting Impact.
+- CEO message.
+- CEO name and title.
+- Optional signature image if provided.
+
+Right:
+- Large decorative quotation mark.
+- Elegant quotation.
+- Meet Our Leadership button.
+
+Use a neutral placeholder portrait and placeholder message until the real CEO information is provided.
+
+Do not invent the CEO's identity.
+
+## SECTION 9 — TESTIMONIALS
+
+Warm ivory or white background.
+
+Eyebrow: TESTIMONIALS
+
+Heading: Trusted by Visionaries
+
+Create three premium testimonial cards on desktop.
+
+Each card:
+- Circular portrait.
+- Decorative gold quotation marks.
+- Testimonial text.
+- Person's name.
+- Professional title.
+- Organization where applicable.
+
+Implement accessible carousel controls when there are more than three testimonials.
+
+Testimonials must be loaded from the testimonials data file.
+
+Only approved, genuine endorsements may appear in production.
+
+Do not invent statements by prominent businesspeople.
+
+## SECTION 10 — CONTACT CTA
+
+Create a split-screen section.
+
+Left:
+- Dark forest green background.
+- Eyebrow: LET'S BUILD TOGETHER
+- Heading: Have a Project in Mind?
+- Supporting paragraph.
+- Contact Us button.
+- Chat on WhatsApp button.
+
+Right:
+- Luxury architectural interior photograph.
+
+Use the same premium proportions and visual treatment shown in the reference.
+
+## SECTION 11 — FOOTER
+
+Dark forest green background.
+
+Include:
+
+Column 1:
+- Global Developers logo.
+- Company tagline.
+
+Column 2:
+- Quick Links.
+
+Column 3:
+- Contact information.
+
+Column 4 if space allows:
+- Social media links.
+
+Bottom:
+- Copyright with dynamically generated current year.
+- Privacy Policy link only if a real policy page exists.
+- Terms link only if a real terms page exists.
+
+All contact information must come from company data.
+
+Do not publish fictional phone numbers, addresses, or email addresses.
+
+---
+
+# 7. ABOUT US PAGE
+
+Maintain the same luxury design language.
+
+Sections:
+
+1. Interior hero banner with page title.
+2. Company introduction.
+3. Our Story.
+4. Mission and Vision.
+5. Core Values.
+6. Company Milestones.
+7. Development Philosophy.
+8. Leadership preview.
+9. Contact CTA.
+
+Use architectural photography, alternating dark and ivory backgrounds, elegant serif headings, and gold accents.
+
+Company history and achievements must be editable through local data files.
+
+---
+
+# 8. PROJECTS LISTING PAGE
+
+Create a premium portfolio browsing experience.
+
+## Features
+
+- Project grid.
+- Status filtering.
+- Residential/commercial filtering.
+- Featured project highlighting.
+- Responsive card layouts.
+- Empty state.
+- Project detail navigation.
+
+Status categories:
+- All
+- Ongoing
+- Upcoming
+- Completed
+
+Project types:
+- All
+- Residential
+- Commercial
+
+Filters should update immediately without page reloads.
+
+No backend is required.
+
+## Project card fields
+
+- Image
+- Title
+- Category
+- Location
+- Status
+- Short description
+- Detail link
+
+Only show construction progress if the value has been provided and verified.
+
+---
+
+# 9. INDIVIDUAL PROJECT DETAILS PAGE
+
+Dynamic route:
+
+`/projects/[slug]`
+
+Each project should have a dedicated luxury presentation page.
+
+## Required sections
+
+1. Full-width project hero.
+2. Project name, location, category, and status.
+3. Project overview.
+4. Architectural gallery.
+5. Key project specifications.
+6. Features and amenities.
+7. Construction progress.
+8. Dated milestone timeline.
+9. Latest construction photographs.
+10. Brochure download if available.
+11. Project inquiry CTA.
+12. Related projects.
+
+## Construction progress component
+
+Display:
+- Verified progress percentage.
+- Visual progress bar.
+- Latest update date.
+- Milestone timeline.
+
+If progress is unknown, display "Progress not announced."
+
+For upcoming projects, avoid displaying a misleading 0% construction indicator.
+
+## Gallery
+
+Implement:
+- Image thumbnails.
+- Full-screen lightbox.
+- Previous/next controls.
+- Keyboard navigation.
+- Descriptive image alt text.
+
+## SEO
+
+Generate project-specific:
+- Page title.
+- Description.
+- Open Graph image.
+- Canonical URL.
+
+Use generateStaticParams() for project routes.
+
+Handle invalid slugs using notFound().
+
+---
+
+# 10. CEO AND LEADERSHIP PAGE
+
+Create a premium executive profile page.
+
+Sections:
+
+- Leadership hero.
+- CEO portrait.
+- CEO biography.
+- Personal message.
+- Vision for the company.
+- Professional achievements.
+- Additional leadership members if provided.
+- Contact CTA.
+
+Do not use fictional names, experience, awards, or qualifications as real information.
+
+Keep content editable in `leadership.ts`.
+
+---
+
+# 11. TESTIMONIALS PAGE
+
+Create a visually elegant testimonials collection.
+
+Support:
+- Client testimonials.
+- Investor testimonials.
+- Business partner endorsements.
+- Industry figure endorsements.
+
+Each testimonial can contain:
+- ID
+- Name
+- Designation
+- Organization
+- Portrait
+- Quote
+- Approval status
+- Featured flag
+
+Only approved testimonials should render on the public website.
+
+If no approved testimonials are available, show a professionally designed neutral section without fabricated reviews.
+
+---
+
+# 12. GALLERY PAGE
+
+Create a masonry-style or elegant grid gallery.
+
+Categories:
+- All
+- Residential
+- Commercial
+- Construction
+- Events
+
+Features:
+- Category filters.
+- Responsive image grid.
+- Full-screen lightbox.
+- Keyboard navigation.
+- Image captions.
+- Lazy loading.
+
+Gallery images should be linked to project data where appropriate.
+
+---
+
+# 13. UPDATES PAGE
+
+Create a company news and construction updates page.
+
+Each update contains:
+- ID
+- Project slug where relevant
+- Title
+- Date
+- Description
+- Cover image
+- Additional images
+- Update category
+
+Possible categories:
+- Construction Progress
+- Project Launch
+- Company News
+- Milestone
+
+Display updates newest first.
+
+Use a premium editorial card layout.
+
+Allow users to open update details either in a dedicated route or in the relevant project page, whichever is architecturally cleaner.
+
+All updates must be based on actual entered data.
+
+---
+
+# 14. CONTACT PAGE
+
+Create a premium contact experience.
+
+Include:
+- Page hero.
+- Contact introduction.
+- Office address.
+- Phone number.
+- Email.
+- WhatsApp.
+- Business hours.
+- Google Maps link.
+- Social media links.
+
+Use real company data when supplied.
+
+Buttons:
+- Call Now
+- Send Email
+- Chat on WhatsApp
+- Get Directions
+
+Do not create a fake contact form that appears to submit successfully without actually sending the inquiry.
+
+For version 1, use functional direct contact links.
+
+If a form is required later, use a legitimate third-party submission service and clearly document it.
+
+---
+
+# 15. DATA ARCHITECTURE
+
+Use strongly typed TypeScript data files.
+
+Create:
+
+`src/data/company.ts`
+
+Store:
+- Company name
+- Tagline
+- Description
+- Contact information
+- Social links
+- Verified statistics
+- Company values
+- Mission
+- Vision
+
+`src/data/projects.ts`
+
+Each project should support:
+
+```typescript
+type ProjectStatus =
+  | "upcoming"
+  | "ongoing"
+  | "completed";
+
+type ProjectType =
+  | "residential"
+  | "commercial";
+
+interface Project {
+  id: string;
+  slug: string;
+  title: string;
+  tagline?: string;
+  type: ProjectType;
+  status: ProjectStatus;
+  location: string;
+  description: string;
+  coverImage: string;
+  gallery: string[];
+  progress: number | null;
+  startDate?: string;
+  expectedCompletion?: string;
+  features: string[];
+  specifications?: Record<string, string>;
+  brochure?: string;
+  featured: boolean;
+}
+```
+
+Also create:
+
+- `src/data/updates.ts`
+- `src/data/testimonials.ts`
+- `src/data/leadership.ts`
+- `src/types/index.ts`
+
+Keep content separate from presentation.
+
+Create realistic-looking but clearly fictional development sample data for local development.
+
+Never represent sample data as verified company information.
+
+Use a simple content publication flag or equivalent mechanism to prevent unverified sample records from appearing in production.
+
+---
+
+# 16. PROJECT FOLDER STRUCTURE
+
+Use this structure or a cleaner equivalent:
+
+```text
+global-developers/
+├── public/
+│   ├── images/
+│   │   ├── branding/
+│   │   ├── hero/
+│   │   ├── projects/
+│   │   ├── leadership/
+│   │   └── testimonials/
+│   └── brochures/
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
+│   │   ├── about/page.tsx
+│   │   ├── projects/page.tsx
+│   │   ├── projects/[slug]/page.tsx
+│   │   ├── leadership/page.tsx
+│   │   ├── testimonials/page.tsx
+│   │   ├── gallery/page.tsx
+│   │   ├── updates/page.tsx
+│   │   ├── contact/page.tsx
+│   │   ├── not-found.tsx
+│   │   ├── sitemap.ts
+│   │   └── robots.ts
+│   │
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── home/
+│   │   ├── projects/
+│   │   ├── gallery/
+│   │   ├── testimonials/
+│   │   ├── shared/
+│   │   └── ui/
+│   │
+│   ├── data/
+│   ├── types/
+│   └── lib/
+│
+├── next.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+Organize components logically.
+
+Avoid large monolithic files.
+
+Use reusable components for:
+- Section headings
+- Buttons
+- Navigation
+- Project cards
+- Status badges
+- Image galleries
+- Statistics
+- Testimonials
+- CTAs
+- Footer
+
+---
+
+# 17. RESPONSIVE DESIGN
+
+The reference image is desktop-focused.
+
+Preserve the same visual identity on all screen sizes.
+
+## Desktop
+
+- Wide architectural hero.
+- Three-column project grid.
+- Four-column statistics.
+- Multi-column CEO section.
+- Full navigation.
+- Generous spacing.
+
+## Tablet
+
+- Two-column project grid.
+- Adjusted hero typography.
+- Collapsible navigation where appropriate.
+- Responsive photography layouts.
+
+## Mobile
+
+- One-column project cards.
+- Accessible hamburger navigation.
+- Optimized hero image crop.
+- Smaller typography.
+- Stacked statistics.
+- Stacked CEO section.
+- Swipe-friendly gallery.
+- Properly sized tap targets.
+
+Avoid horizontal scrolling and text overflow.
+
+Do not merely shrink the desktop design. Adapt its composition carefully.
+
+---
+
+# 18. SEO AND PERFORMANCE
+
+Implement:
+
+- Static generation.
+- Semantic HTML.
+- Unique page metadata.
+- Dynamic project metadata.
+- Open Graph metadata.
+- Canonical URLs.
+- XML sitemap.
+- robots.txt.
+- Descriptive image alt text.
+- Lazy-loaded below-the-fold images.
+- Optimized fonts.
+- Responsive images.
+- Appropriate structured data.
+
+Use next/image and correctly configured image optimization.
+
+If using static export, ensure the image strategy and deployment settings are compatible. Prefer normal Next.js static generation on Vercel rather than forcing static export unnecessarily.
+
+Target Lighthouse scores of 90+ for performance, accessibility, best practices, and SEO where realistically achievable.
+
+Do not claim scores without running tests.
+
+---
+
+# 19. ACCESSIBILITY
+
+Implement:
+- Semantic headings.
+- Keyboard navigation.
+- Visible focus indicators.
+- Accessible menus.
+- Proper button labels.
+- Sufficient text contrast.
+- Accessible image galleries.
+- Reduced-motion support.
+- Correct landmark structure.
+
+Target WCAG 2.2 AA.
+
+Avoid gold text on light backgrounds where contrast is insufficient.
+
+---
+
+# 20. DEVELOPMENT WORKFLOW
+
+Follow these phases.
+
+## Phase 1 — Inspect and plan
+
+First inspect the reference image in detail.
+
+Identify:
+- All homepage sections.
+- Layout patterns.
+- Spacing.
+- Typography.
+- Image aspect ratios.
+- Color usage.
+- Shared components.
+
+Inspect the repository before making changes.
+
+Create a concise implementation plan.
+
+## Phase 2 — Project setup
+
+Initialize or configure Next.js, TypeScript, Tailwind, fonts, icons, and required libraries.
+
+Create the design tokens and global styles.
+
+## Phase 3 — Homepage
+
+Build the homepage first.
+
+Focus on matching the supplied image.
+
+Do not begin redesigning the reference.
+
+Implement all homepage sections and interactions.
+
+## Phase 4 — Internal pages
+
+Build the About, Projects, Project Details, Leadership, Testimonials, Gallery, Updates, and Contact pages.
+
+Reuse the same visual system.
+
+## Phase 5 — Data integration
+
+Connect all pages to typed local data.
+
+Implement project filtering, galleries, milestones, and related content.
+
+## Phase 6 — Testing
+
+Run:
+- TypeScript checks.
+- Linting.
+- Production build.
+- Route validation.
+- Responsive checks.
+- Accessibility checks.
+
+Fix all discovered errors.
+
+## Phase 7 — Documentation
+
+Create a README explaining:
+- How to install dependencies.
+- How to run the development server.
+- How to add a project.
+- How to update project progress.
+- How to add construction photographs.
+- How to add a testimonial.
+- How to edit CEO information.
+- How to configure contact details.
+- How to deploy on Vercel.
+
+---
+
+# 21. ACCEPTANCE CRITERIA
+
+The project is complete only when:
+
+1. The homepage closely reproduces the attached reference.
+2. All requested pages exist and work.
+3. Navigation functions correctly.
+4. Project filtering works.
+5. Dynamic project detail routes work.
+6. Galleries and lightboxes work.
+7. Construction updates display correctly.
+8. Responsive layouts work on mobile, tablet, and desktop.
+9. Contact links are functional when configured.
+10. No fabricated company facts appear in production.
+11. All TypeScript and build errors are resolved.
+12. SEO metadata is configured.
+13. The project is ready for Vercel deployment.
+14. A complete README is provided.
+
+---
+
+# 22. CRITICAL INSTRUCTIONS
+
+**Visual fidelity is the highest design priority.**
+
+The reference image has already been approved.
+
+Do not:
+- Change the main color scheme.
+- Replace the serif typography with a generic font.
+- Rearrange homepage sections unnecessarily.
+- Use generic dashboard-style components.
+- Add unrelated decorative effects.
+- Invent company statistics.
+- Invent CEO details.
+- Publish fake testimonials.
+- Create non-functional buttons.
+- Add an unnecessary backend.
+- Overengineer the architecture.
+
+Do:
+- Match the reference design closely.
+- Use clean, reusable components.
+- Write production-quality TypeScript.
+- Maintain consistent spacing.
+- Use elegant architecture-focused imagery.
+- Ensure responsive behavior.
+- Implement real interactions.
+- Keep content easy to update.
+- Test the final build.
+
+When original assets are unavailable, use clearly marked temporary placeholders. Never silently substitute fictional company facts.
+
+---
+
+# 23. FINAL EXECUTION INSTRUCTION
+
+Begin by analyzing the attached reference image and inspecting the existing repository.
+
+Then implement the entire Global Developers frontend website according to this specification.
+
+Work systematically through the phases.
+
+Do not stop after creating the homepage or a static mockup.
+
+Deliver a complete, responsive, working frontend website with every specified route and feature.
+
+When finished, provide:
+- A summary of implemented pages.
+- A summary of completed features.
+- Any remaining placeholder assets or missing company information.
+- Test and build results.
+- Local run instructions.
+- Deployment instructions.
+
+**The final result must look and feel like the approved luxury Global Developers reference image, translated into a polished, real-world Next.js website.**
