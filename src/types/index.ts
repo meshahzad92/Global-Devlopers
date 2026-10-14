@@ -29,6 +29,10 @@ export interface Project extends Publishable {
   description: string;
   overview?: string[];
   coverImage: string;
+  /** Background for the project page header; falls back to coverImage. null = plain green header. */
+  heroImage?: string | null;
+  /** Site / master plan shown on the project page, with a full-resolution version to open. */
+  masterPlan?: { src: string; full: string; width: number; height: number };
   gallery: string[];
   /** Verified construction progress 0–100, or null when not announced. */
   progress: number | null;

@@ -6,3 +6,6 @@ next-env.d.ts
 .env*.local
 .vercel
 .DS_Store
+
+# Original source files (optimized copies live in public/images)
+Global_data/

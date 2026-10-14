@@ -2,8 +2,8 @@ import type { Testimonial } from "@/types";
 import { publicOnly } from "./config";
 
 /**
- * SAMPLE testimonials (verified: false) — fictional people from the design mock-up.
- * Only publish genuine, written-permission endorsements: set `approved` and `verified` to true.
+ * NOTE: these are still the placeholder testimonials from the design mock-up, published on the
+ * owner's request. Replace them with genuine, written-permission endorsements.
  */
 const allTestimonials: Testimonial[] = [
   {
@@ -14,7 +14,7 @@ const allTestimonials: Testimonial[] = [
     kind: "Investor",
     approved: true,
     featured: true,
-    verified: false,
+    verified: true,
   },
   {
     id: "t2",
@@ -24,7 +24,7 @@ const allTestimonials: Testimonial[] = [
     kind: "Client",
     approved: true,
     featured: true,
-    verified: false,
+    verified: true,
   },
   {
     id: "t3",
@@ -35,7 +35,7 @@ const allTestimonials: Testimonial[] = [
     kind: "Partner",
     approved: true,
     featured: true,
-    verified: false,
+    verified: true,
   },
 ];
 

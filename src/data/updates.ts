@@ -5,18 +5,6 @@ import { publicOnly } from "./config";
 /** SAMPLE updates (verified: false). Dates and milestones are illustrative only. */
 const allUpdates: Update[] = [
   {
-    id: "u1",
-    projectSlug: "global-business-tower",
-    title: "Global Business Tower",
-    milestone: "Structure Level 12 Completed",
-    date: "2024-05-15",
-    description: "The core and slab works for level 12 are complete, keeping the tower on schedule for its structural top-out.",
-    coverImage: images.constructionMain,
-    images: [images.constructionMain],
-    category: "Construction Progress",
-    verified: false,
-  },
-  {
     id: "u2",
     projectSlug: "global-residences",
     title: "Global Residences",

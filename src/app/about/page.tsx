@@ -21,7 +21,7 @@ export default function AboutPage() {
           <div>
             <SectionHead eyebrow="Our Story" title="Shaping Better Communities" />
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Founded with a vision to raise the standard of real estate development, Global Developers has grown into a trusted name delivering landmark projects across Lahore, Islamabad and Karachi.
+              Founded with a vision to raise the standard of real estate development, Global Developers has grown into a trusted name delivering landmark projects in Sahiwal.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Our mission is to build developments of enduring quality — places where families flourish and businesses grow.

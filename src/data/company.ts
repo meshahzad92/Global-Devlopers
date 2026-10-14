@@ -21,12 +21,12 @@ export const companyBase = {
 
 const sampleContact = {
   verified: false,
-  address: "123 Main Boulevard, Lahore, Pakistan",
+  address: "123 Main Boulevard, Sahiwal, Pakistan",
   phone: "+92 305 1717337",
   whatsapp: "923051717337",
   email: "info@globaldevelopers.com",
   hours: ["Monday – Friday: 9:00 AM – 6:00 PM", "Saturday: 10:00 AM – 4:00 PM", "Sunday: Closed"],
-  mapsUrl: "https://maps.google.com/?q=Main+Boulevard+Lahore",
+  mapsUrl: "https://maps.google.com/?q=Main+Boulevard+Sahiwal",
 };
 
 export type ContactInfo = typeof sampleContact;

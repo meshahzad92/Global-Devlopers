@@ -1,10 +1,14 @@
 import Image from "next/image";
 
-export function PageHero({ eyebrow, title, text, image }: { eyebrow: string; title: string; text?: string; image: string }) {
+export function PageHero({ eyebrow, title, text, image }: { eyebrow: string; title: string; text?: string; image?: string }) {
   return (
     <section className="relative isolate overflow-hidden bg-forest-deep">
-      <Image src={image} alt="" fill priority sizes="100vw" className="-z-10 object-cover" />
-      <div className="hero-overlay absolute inset-0 -z-10" />
+      {image && (
+        <>
+          <Image src={image} alt="" fill priority sizes="100vw" className="-z-10 object-cover" />
+          <div className="hero-overlay absolute inset-0 -z-10" />
+        </>
+      )}
       <div className="container-gd fade-up py-24 md:py-32">
         <p className="eyebrow">{eyebrow}</p>
         <h1 className="mt-4 max-w-2xl text-4xl text-on-dark md:text-6xl">{title}</h1>

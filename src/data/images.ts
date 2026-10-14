@@ -12,6 +12,9 @@ export const images = {
   projects: {
     residences: "/images/projects/global-residences.jpg",
     tower: "/images/projects/global-business-tower.jpg",
+    avenue: "/images/projects/global-avenue.jpg",
+    avenueMap: "/images/projects/global-avenue-map.jpg",
+    avenueMapFull: "/images/projects/global-avenue-map-full.jpg",
     trade: "/images/projects/global-trade-center.jpg",
   },
   ceo: "/images/leadership/mian-muhammad-arshad.jpg",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, Maximize2 } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { getProject, projects, statusLabel, typeLabel } from "@/data/projects";
@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <PageHero image={p.coverImage} eyebrow={`${statusLabel[p.status]} · ${typeLabel[p.type]} · ${p.location}`} title={p.title} text={p.tagline} />
+      <PageHero image={p.heroImage === null ? undefined : (p.heroImage ?? p.coverImage)} eyebrow={`${statusLabel[p.status]} · ${typeLabel[p.type]} · ${p.location}`} title={p.title} text={p.tagline} />
       <section className="bg-ivory py-16">
         <div className="container-gd grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div>
@@ -37,6 +37,19 @@ export default async function ProjectPage({ params }: Props) {
             </Link>
             <h2 className="mt-6 text-3xl">Overview</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">{p.description}</p>
+            {p.masterPlan && (
+              <div className="mt-10">
+                <div className="flex items-end justify-between gap-4">
+                  <h2 className="text-3xl">Master Plan</h2>
+                  <a href={p.masterPlan.full} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-sm text-gold hover:underline">
+                    <Maximize2 className="size-4" aria-hidden="true" /> View full size
+                  </a>
+                </div>
+                <a href={p.masterPlan.full} target="_blank" rel="noopener" className="mt-4 block overflow-hidden rounded-sm border bg-card shadow-sm" aria-label={`Open the ${p.title} master plan at full size`}>
+                  <Image src={p.masterPlan.src} alt={`${p.title} master plan`} width={p.masterPlan.width} height={p.masterPlan.height} sizes="(min-width: 1024px) 55vw, 100vw" className="h-auto w-full transition-transform duration-300 hover:scale-[1.02]" />
+                </a>
+              </div>
+            )}
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {p.gallery.map((src, i) => (
                 <Image
