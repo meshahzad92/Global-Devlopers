@@ -1,36 +1,40 @@
-import { PageHero, SectionHead } from "@/components/shared/PageHero";
-import { CtaBand } from "@/components/shared/CtaBand";
-import { UpdateCard } from "@/components/shared/UpdateCard";
+import Image from "next/image";
+import { Calendar } from "lucide-react";
+import { PageHero } from "@/components/shared/PageHero";
 import { updates } from "@/data/updates";
 import { images } from "@/data/images";
 import { pageMetadata } from "@/lib/seo";
+import { formatDate } from "@/lib/utils";
 
 export const metadata = pageMetadata({
-  title: "Updates",
-  description: "Construction progress, project launches and company news from Global Developers.",
+  title: "Construction Updates",
+  description: "Latest construction milestones and company announcements from Global Developers.",
   path: "/updates",
 });
 
 export default function UpdatesPage() {
-  const [latest, ...rest] = updates;
   return (
     <>
-      <PageHero eyebrow="Construction Progress" title="Real Progress. Real Results." text="Stay updated with the latest construction milestones and company news." image={images.constructionMain} />
-      <section className="py-16 md:py-20">
-        <div className="container-gd">
-          {!latest ? (
-            <p className="text-center text-muted-foreground">Updates will be published here soon.</p>
-          ) : (
-            <>
-              <SectionHead eyebrow="Latest Update" title="News & Milestones" />
-              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {[latest, ...rest].map((u) => <UpdateCard key={u.id} u={u} />)}
+      <PageHero image={images.constructionMain} eyebrow="Construction Progress" title="Real Progress. Real Results." />
+      <section className="bg-cream py-16">
+        <div className="container-gd grid gap-6 md:grid-cols-3">
+          {updates.map((u) => (
+            <article key={u.id} className="overflow-hidden rounded-sm border bg-card shadow-sm">
+              <Image src={u.coverImage} alt={u.milestone ?? u.title} width={1280} height={800} sizes="(min-width: 768px) 33vw, 100vw" className="aspect-[16/10] w-full object-cover" />
+              <div className="p-6">
+                <p className="eyebrow">{u.title}</p>
+                <h2 className="mt-2 text-2xl">{u.milestone ?? u.title}</h2>
+                <p className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Calendar className="size-3.5" aria-hidden="true" />
+                  <time dateTime={u.date}>{formatDate(u.date)}</time>
+                </p>
+                <p className="mt-3 text-sm text-muted-foreground">{u.description}</p>
               </div>
-            </>
-          )}
+            </article>
+          ))}
+          {updates.length === 0 && <p className="text-muted-foreground">Updates will be published here soon.</p>}
         </div>
       </section>
-      <CtaBand />
     </>
   );
 }

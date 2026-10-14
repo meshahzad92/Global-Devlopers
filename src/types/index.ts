@@ -71,9 +71,11 @@ export interface Leader extends Publishable {
   id: string;
   name: string;
   role: string;
-  portrait: string;
+  portrait?: string;
   bio: string[];
   message?: string[];
+  /** Shorter message shown on the Leadership page. */
+  leadershipMessage?: string;
   quote?: string;
   vision?: string;
   achievements?: string[];

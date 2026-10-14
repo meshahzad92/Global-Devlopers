@@ -2,11 +2,13 @@ import type { Leader } from "@/types";
 import { images } from "./images";
 import { isPublic, publicOnly } from "./config";
 
+type Ceo = Leader & { portrait: string };
+
 /**
  * SAMPLE leadership (verified: false). The CEO name, portrait and message below are
  * placeholders from the design mock-up — replace with the real CEO's details.
  */
-const sampleCeo: Leader = {
+const sampleCeo: Ceo = {
   id: "ceo",
   name: "Ahmed Khan",
   role: "Chief Executive Officer",
@@ -17,6 +19,8 @@ const sampleCeo: Leader = {
   message: [
     "At Global Developers, our vision is to create exceptional spaces that inspire, empower, and stand the test of time. We are committed to building more than just properties — we are building stronger communities and a brighter future for generations to come.",
   ],
+  leadershipMessage:
+    "At Global Developers, our vision is to create exceptional spaces that inspire, empower, and stand the test of time.",
   quote:
     "Our goal is to set new benchmarks in real estate development through innovation, integrity, and a people-first approach.",
   vision:
@@ -29,7 +33,7 @@ const sampleCeo: Leader = {
   verified: false,
 };
 
-const placeholderCeo: Leader = {
+const placeholderCeo: Ceo = {
   id: "ceo",
   name: "Chief Executive Officer",
   role: "Global Developers",
@@ -40,14 +44,13 @@ const placeholderCeo: Leader = {
   verified: true,
 };
 
-export const ceo: Leader = isPublic(sampleCeo) ? sampleCeo : placeholderCeo;
+export const ceo: Ceo = isPublic(sampleCeo) ? sampleCeo : placeholderCeo;
 
 const allTeam: Leader[] = [
   {
     id: "l2",
     name: "Ayesha Siddiqui",
     role: "Director, Design & Planning",
-    portrait: images.leaders[0],
     bio: ["Leads architecture and master planning with a focus on sustainable, human-centred spaces."],
     verified: false,
   },
@@ -55,7 +58,6 @@ const allTeam: Leader[] = [
     id: "l3",
     name: "Usman Tariq",
     role: "Director, Construction",
-    portrait: images.leaders[1],
     bio: ["Oversees delivery, quality control and safety across every Global Developers site."],
     verified: false,
   },

@@ -1,14 +1,14 @@
-import { Clock, Mail, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PageHero, SectionHead } from "@/components/shared/PageHero";
-import { SocialIcon } from "@/components/shared/SocialIcon";
+import { PageHero } from "@/components/shared/PageHero";
+import { ContactForm } from "@/components/shared/ContactForm";
 import { company } from "@/data/company";
 import { images } from "@/data/images";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact Us",
-  description: "Get in touch with Global Developers to discuss your investment or development needs.",
+  title: "Contact",
+  description: "Get in touch with Global Developers about investments, projects and partnerships.",
   path: "/contact",
 });
 
@@ -16,55 +16,24 @@ export default function ContactPage() {
   const c = company.contact;
   return (
     <>
-      <PageHero eyebrow="Contact Us" title="Have a Project in Mind?" text="We'd love to hear from you. Get in touch with our team to discuss your investment or development needs." image={images.pageContact} />
-      <section className="py-16 md:py-20">
-        <div className="container-gd">
-          {!c ? (
-            <div className="rounded-sm border bg-card p-12 text-center">
-              <p className="font-serif text-2xl">Contact details will be published soon.</p>
+      <PageHero image={images.interior} eyebrow="Let's Build Together" title="Have a Project in Mind?" text="We'd love to hear from you." />
+      <section className="bg-cream py-16">
+        {c ? (
+          <div className="container-gd grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+            <div className="space-y-6 rounded-sm bg-forest p-8 text-on-dark">
+              <h2 className="text-3xl">Contact Info</h2>
+              <p className="flex gap-3 text-sm"><MapPin className="size-5 shrink-0 text-gold" aria-hidden="true" />{c.address}</p>
+              <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="flex gap-3 text-sm hover:text-gold"><Phone className="size-5 shrink-0 text-gold" aria-hidden="true" />{c.phone}</a>
+              <a href={`mailto:${c.email}`} className="flex gap-3 text-sm hover:text-gold"><Mail className="size-5 shrink-0 text-gold" aria-hidden="true" />{c.email}</a>
+              <Button asChild variant="gold">
+                <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer"><MessageCircle /> Chat on WhatsApp</a>
+              </Button>
             </div>
-          ) : (
-            <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
-              <div>
-                <SectionHead eyebrow="Get in Touch" title="Let's Build Together" />
-                <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-                  Whether you are looking for a new home, a commercial space or an investment opportunity, our team is ready to help. Reach us directly using any of the options below.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Button asChild variant="gold"><a href={`tel:${c.phone.replace(/\s/g, "")}`}><Phone /> Call Now</a></Button>
-                  <Button asChild variant="outline"><a href={`mailto:${c.email}`}><Mail /> Send Email</a></Button>
-                  <Button asChild variant="default"><a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer"><MessageCircle /> Chat on WhatsApp</a></Button>
-                  <Button asChild variant="outline"><a href={c.mapsUrl} target="_blank" rel="noreferrer"><Navigation /> Get Directions</a></Button>
-                </div>
-                <div className="mt-10">
-                  <p className="text-sm font-semibold text-foreground">Follow Us</p>
-                  <div className="mt-4 flex gap-3">
-                    {company.socials.map((s) => (
-                      <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.name} className="grid size-10 place-items-center rounded-full border text-forest transition-colors hover:border-gold hover:bg-gold">
-                        <SocialIcon name={s.icon} className="size-4" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <ul className="grid gap-4 sm:grid-cols-2">
-                {[
-                  { icon: MapPin, title: "Office Address", body: <a href={c.mapsUrl} target="_blank" rel="noreferrer" className="hover:text-gold">{c.address}</a> },
-                  { icon: Phone, title: "Phone", body: <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="hover:text-gold">{c.phone}</a> },
-                  { icon: Mail, title: "Email", body: <a href={`mailto:${c.email}`} className="break-all hover:text-gold">{c.email}</a> },
-                  { icon: MessageCircle, title: "WhatsApp", body: <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-gold">+{c.whatsapp}</a> },
-                  { icon: Clock, title: "Business Hours", body: <>{c.hours.map((h) => <span key={h} className="block">{h}</span>)}</>, wide: true },
-                ].map((item) => (
-                  <li key={item.title} className={`rounded-sm border bg-card p-6 shadow-sm ${item.wide ? "sm:col-span-2" : ""}`}>
-                    <span className="grid size-11 place-items-center rounded-sm bg-gold/15 text-gold"><item.icon className="size-5" aria-hidden="true" /></span>
-                    <h3 className="mt-4 font-sans text-sm font-semibold">{item.title}</h3>
-                    <div className="mt-1.5 text-sm text-muted-foreground">{item.body}</div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+            <ContactForm email={c.email} />
+          </div>
+        ) : (
+          <p className="container-gd text-muted-foreground">Contact details will be published soon.</p>
+        )}
       </section>
     </>
   );

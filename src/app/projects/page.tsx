@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/shared/PageHero";
-import { CtaBand } from "@/components/shared/CtaBand";
 import { ProjectBrowser } from "@/components/projects/ProjectBrowser";
 import { projects } from "@/data/projects";
 import { images } from "@/data/images";
@@ -14,17 +13,12 @@ export const metadata = pageMetadata({
 export default function ProjectsPage() {
   return (
     <>
-      <PageHero eyebrow="Our Portfolio" title="Our Developments" text="Residential and commercial developments designed with quality, innovation, and enduring value." image={images.pageProjects} />
-      <section className="py-16 md:py-20">
+      <PageHero image={images.projects.tower} eyebrow="Our Developments" title="Projects That Define Skylines" />
+      <section className="bg-cream py-16">
         <div className="container-gd">
-          {projects.length === 0 ? (
-            <p className="text-center text-muted-foreground">Our project portfolio will be published soon.</p>
-          ) : (
-            <ProjectBrowser projects={projects} />
-          )}
+          <ProjectBrowser projects={projects} />
         </div>
       </section>
-      <CtaBand />
     </>
   );
 }
