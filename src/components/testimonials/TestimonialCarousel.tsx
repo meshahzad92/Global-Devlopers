@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { Testimonial } from "@/types";
 import { TestimonialCard } from "./TestimonialCard";
 
@@ -22,35 +22,46 @@ function usePerView() {
   return perView;
 }
 
-export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
+const arrow =
+  "grid size-9 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-gold hover:text-gold";
+
+export function TestimonialCarousel({ items, heading }: { items: Testimonial[]; heading: ReactNode }) {
   const perView = usePerView();
   const [index, setIndex] = useState(0);
   const max = Math.max(0, items.length - perView);
   const current = Math.min(index, max);
-  const controls = items.length > perView;
+  const canSlide = max > 0;
 
-  const go = (dir: -1 | 1) => setIndex((i) => {
-    const n = Math.min(i, max) + dir;
-    return n < 0 ? max : n > max ? 0 : n;
-  });
+  const go = (dir: -1 | 1) =>
+    setIndex((i) => {
+      const n = Math.min(i, max) + dir;
+      return n < 0 ? max : n > max ? 0 : n;
+    });
 
   return (
     <div
-      className="relative"
       role="region"
       aria-roledescription="carousel"
       aria-label="Testimonials"
       onKeyDown={(e) => {
-        if (!controls) return;
+        if (!canSlide) return;
         if (e.key === "ArrowLeft") go(-1);
         if (e.key === "ArrowRight") go(1);
       }}
     >
-      <div className="overflow-hidden">
-        <ul
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${(current * 100) / perView}%)` }}
-        >
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        {heading}
+        <div className="flex gap-3">
+          <button type="button" onClick={() => go(-1)} aria-label="Previous testimonials" className={arrow}>
+            <ChevronLeft className="size-4" />
+          </button>
+          <button type="button" onClick={() => go(1)} aria-label="Next testimonials" className={arrow}>
+            <ChevronRight className="size-4" />
+          </button>
+        </div>
+      </div>
+      <div className="-mx-3 mt-10 overflow-hidden">
+        <ul className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${(current * 100) / perView}%)` }}>
           {items.map((t, i) => (
             <li
               key={t.id}
@@ -65,16 +76,6 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
           ))}
         </ul>
       </div>
-      {controls && (
-        <>
-          <button onClick={() => go(-1)} aria-label="Previous testimonials" className="absolute left-0 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full border bg-card text-forest shadow-sm transition-colors hover:bg-gold xl:-left-12">
-            <ChevronLeft className="size-4" />
-          </button>
-          <button onClick={() => go(1)} aria-label="Next testimonials" className="absolute right-0 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full border bg-card text-forest shadow-sm transition-colors hover:bg-gold xl:-right-12">
-            <ChevronRight className="size-4" />
-          </button>
-        </>
-      )}
     </div>
   );
 }

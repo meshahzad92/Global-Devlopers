@@ -1,5 +1,4 @@
 import type { Testimonial } from "@/types";
-import { images } from "./images";
 import { publicOnly } from "./config";
 
 /**
@@ -11,7 +10,6 @@ const allTestimonials: Testimonial[] = [
     id: "t1",
     name: "Faisal Rahman",
     designation: "Business Investor",
-    portrait: images.people[0],
     quote: "Global Developers has set a new standard in quality and professionalism. Their commitment to excellence is truly commendable.",
     kind: "Investor",
     approved: true,
@@ -22,7 +20,6 @@ const allTestimonials: Testimonial[] = [
     id: "t2",
     name: "Sara Malik",
     designation: "Homeowner",
-    portrait: images.people[1],
     quote: "A trustworthy and innovative developer. The entire experience was smooth, transparent, and highly professional.",
     kind: "Client",
     approved: true,
@@ -34,7 +31,6 @@ const allTestimonials: Testimonial[] = [
     name: "Imran Sheikh",
     designation: "CEO",
     organization: "Skyline Group",
-    portrait: images.people[2],
     quote: "Their developments are transforming the skylines and creating real value for businesses and communities.",
     kind: "Partner",
     approved: true,
