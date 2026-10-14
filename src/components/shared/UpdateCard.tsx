@@ -17,10 +17,10 @@ export function UpdateCard({ u }: { u: Update }) {
           <time dateTime={u.date}>{formatDate(u.date)}</time>
         </p>
         <h3 className="mt-2 text-xl">{u.title}</h3>
-        {u.milestone && <p className="mt-1 text-sm font-medium text-gold-deep">{u.milestone}</p>}
+        {u.milestone && <p className="mt-1 text-sm font-medium text-gold">{u.milestone}</p>}
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{u.description}</p>
         {u.projectSlug && (
-          <Link href={`/projects/${u.projectSlug}#progress`} className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold-deep">
+          <Link href={`/projects/${u.projectSlug}#progress`} className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold">
             View Project <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         )}

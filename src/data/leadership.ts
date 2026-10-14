@@ -12,8 +12,7 @@ const sampleCeo: Leader = {
   role: "Chief Executive Officer",
   portrait: images.ceo,
   bio: [
-    "Our Chief Executive Officer leads Global Developers with a focus on quality, transparency and long-term value for every client and community we serve.",
-    "Under this leadership, the company has grown its portfolio of residential and commercial developments while staying true to its founding principles.",
+    "Over two decades of experience leading residential and commercial developments across Pakistan.",
   ],
   message: [
     "At Global Developers, our vision is to create exceptional spaces that inspire, empower, and stand the test of time. We are committed to building more than just properties — we are building stronger communities and a brighter future for generations to come.",
@@ -46,18 +45,18 @@ export const ceo: Leader = isPublic(sampleCeo) ? sampleCeo : placeholderCeo;
 const allTeam: Leader[] = [
   {
     id: "l2",
-    name: "Sana Qureshi",
-    role: "Director of Projects",
+    name: "Ayesha Siddiqui",
+    role: "Director, Design & Planning",
     portrait: images.leaders[0],
-    bio: ["Oversees design, engineering and on-site delivery across all developments."],
+    bio: ["Leads architecture and master planning with a focus on sustainable, human-centred spaces."],
     verified: false,
   },
   {
     id: "l3",
     name: "Usman Tariq",
-    role: "Director of Finance",
+    role: "Director, Construction",
     portrait: images.leaders[1],
-    bio: ["Leads financial planning, investor relations and project funding."],
+    bio: ["Oversees delivery, quality control and safety across every Global Developers site."],
     verified: false,
   },
 ];

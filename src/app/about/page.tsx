@@ -108,7 +108,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf9f5] py-16 md:py-20">
+      <section className="bg-cream py-16 md:py-20">
         <div className="container-gd grid items-center gap-10 md:grid-cols-[0.6fr_1.4fr]">
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-lg">
             <Image src={ceo.portrait} alt={`Portrait of ${ceo.name}`} fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
@@ -119,7 +119,7 @@ export default function AboutPage() {
             <p className="mt-4 text-sm font-semibold">{ceo.name}</p>
             <p className="text-xs text-muted-foreground">{ceo.role}</p>
             {team.length > 0 && <p className="mt-4 text-sm text-muted-foreground">Supported by a leadership team of {team.length + 1} professionals across projects, finance and design.</p>}
-            <Button asChild variant="outlineGold" className="mt-8">
+            <Button asChild variant="outline" className="mt-8">
               <Link href="/leadership">Meet Our Leadership <ArrowRight /></Link>
             </Button>
           </div>

@@ -33,7 +33,7 @@ export default function ContactPage() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Button asChild variant="gold"><a href={`tel:${c.phone.replace(/\s/g, "")}`}><Phone /> Call Now</a></Button>
                   <Button asChild variant="outline"><a href={`mailto:${c.email}`}><Mail /> Send Email</a></Button>
-                  <Button asChild variant="forest"><a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer"><MessageCircle /> Chat on WhatsApp</a></Button>
+                  <Button asChild variant="default"><a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer"><MessageCircle /> Chat on WhatsApp</a></Button>
                   <Button asChild variant="outline"><a href={c.mapsUrl} target="_blank" rel="noreferrer"><Navigation /> Get Directions</a></Button>
                 </div>
                 <div className="mt-10">
@@ -49,14 +49,14 @@ export default function ContactPage() {
               </div>
               <ul className="grid gap-4 sm:grid-cols-2">
                 {[
-                  { icon: MapPin, title: "Office Address", body: <a href={c.mapsUrl} target="_blank" rel="noreferrer" className="hover:text-gold-deep">{c.address}</a> },
-                  { icon: Phone, title: "Phone", body: <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="hover:text-gold-deep">{c.phone}</a> },
-                  { icon: Mail, title: "Email", body: <a href={`mailto:${c.email}`} className="break-all hover:text-gold-deep">{c.email}</a> },
-                  { icon: MessageCircle, title: "WhatsApp", body: <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-gold-deep">+{c.whatsapp}</a> },
+                  { icon: MapPin, title: "Office Address", body: <a href={c.mapsUrl} target="_blank" rel="noreferrer" className="hover:text-gold">{c.address}</a> },
+                  { icon: Phone, title: "Phone", body: <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="hover:text-gold">{c.phone}</a> },
+                  { icon: Mail, title: "Email", body: <a href={`mailto:${c.email}`} className="break-all hover:text-gold">{c.email}</a> },
+                  { icon: MessageCircle, title: "WhatsApp", body: <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-gold">+{c.whatsapp}</a> },
                   { icon: Clock, title: "Business Hours", body: <>{c.hours.map((h) => <span key={h} className="block">{h}</span>)}</>, wide: true },
                 ].map((item) => (
                   <li key={item.title} className={`rounded-sm border bg-card p-6 shadow-sm ${item.wide ? "sm:col-span-2" : ""}`}>
-                    <span className="grid size-11 place-items-center rounded-sm bg-gold/15 text-gold-deep"><item.icon className="size-5" aria-hidden="true" /></span>
+                    <span className="grid size-11 place-items-center rounded-sm bg-gold/15 text-gold"><item.icon className="size-5" aria-hidden="true" /></span>
                     <h3 className="mt-4 font-sans text-sm font-semibold">{item.title}</h3>
                     <div className="mt-1.5 text-sm text-muted-foreground">{item.body}</div>
                   </li>

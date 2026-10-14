@@ -129,19 +129,7 @@ function interior({ w, h, label }) {
 }
 
 const jobs = [
-  ["hero/hero.jpg", skyline({ w: 2000, h: 1100, seed: 11, tall: 1, label: "hero" })],
   ["hero/about.jpg", skyline({ w: 1400, h: 1000, seed: 21, sky: ["#4c6a6a", "#a8a289", "#efd7a6"], label: "about" })],
-  ["hero/interior.jpg", interior({ w: 1280, h: 768, label: "interior" })],
-  ["hero/page-projects.jpg", skyline({ w: 2000, h: 900, seed: 31, label: "projects" })],
-  ["hero/page-leadership.jpg", interior({ w: 2000, h: 900, label: "leadership" })],
-  ["hero/page-gallery.jpg", skyline({ w: 2000, h: 900, seed: 41, sky: ["#1a3330", "#7a6a4a", "#e9c58b"], label: "gallery" })],
-  ["hero/page-contact.jpg", skyline({ w: 2000, h: 900, seed: 51, label: "contact" })],
-  ["projects/global-residences.jpg", skyline({ w: 1024, h: 704, seed: 101, sky: ["#5d7e86", "#c9b48f", "#f2d29b"], tall: 0.5, label: "residences" })],
-  ["projects/global-business-tower.jpg", skyline({ w: 1024, h: 704, seed: 202, sky: ["#4f7387", "#9fb2b8", "#e9cf9e"], tall: 1.1, density: 0.8, label: "business tower" })],
-  ["projects/global-trade-center.jpg", skyline({ w: 1024, h: 704, seed: 303, sky: ["#38556a", "#b49a74", "#f0c486"], label: "trade center" })],
-  ["projects/global-heights.jpg", skyline({ w: 1024, h: 704, seed: 404, sky: ["#2d4b52", "#a58d66", "#eac28a"], label: "heights" })],
-  ["projects/global-villas.jpg", skyline({ w: 1024, h: 704, seed: 505, sky: ["#6f8f8a", "#d1bc93", "#f4dcac"], tall: 0.35, label: "villas" })],
-  ["projects/global-arcade.jpg", skyline({ w: 1024, h: 704, seed: 606, sky: ["#28434a", "#94805d", "#e3b97c"], label: "arcade" })],
   ["construction/site-1.jpg", construction({ w: 1200, h: 800, seed: 1, label: "construction 1" })],
   ["construction/site-2.jpg", construction({ w: 800, h: 520, seed: 2, label: "construction 2" })],
   ["construction/site-3.jpg", construction({ w: 800, h: 520, seed: 3, label: "construction 3" })],
@@ -153,7 +141,6 @@ const jobs = [
   ["testimonials/person-2.jpg", portrait({ w: 240, h: 240, seed: 13 })],
   ["testimonials/person-3.jpg", portrait({ w: 240, h: 240, seed: 14 })],
   ["testimonials/person-4.jpg", portrait({ w: 240, h: 240, seed: 15 })],
-  ["branding/og-image.jpg", skyline({ w: 1200, h: 630, seed: 11, tall: 1 })],
 ];
 
 for (const [rel, svg] of jobs) {

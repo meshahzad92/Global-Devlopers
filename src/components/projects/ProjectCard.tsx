@@ -41,7 +41,7 @@ export function ProjectCard({ p, showDescription = false }: { p: Project; showDe
             <h3 className="text-xl">{p.title}</h3>
             {p.tagline && <p className="mt-1 text-xs text-muted-foreground">{p.tagline}</p>}
           </div>
-          <span className="grid size-8 shrink-0 place-items-center rounded-full border border-gold text-gold-deep transition-colors group-hover:bg-gold group-hover:text-forest-deep">
+          <span className="grid size-8 shrink-0 place-items-center rounded-full border border-gold text-gold transition-colors group-hover:bg-gold group-hover:text-forest-deep">
             <ArrowRight className="size-4" aria-hidden="true" />
           </span>
         </div>

@@ -41,18 +41,6 @@ const allTestimonials: Testimonial[] = [
     featured: true,
     verified: false,
   },
-  {
-    id: "t4",
-    name: "Ayesha Khan",
-    designation: "Retail Tenant",
-    organization: "Global Trade Center",
-    portrait: images.people[3],
-    quote: "From handover to day-to-day management, the team has been responsive and reliable. Our store has thrived here.",
-    kind: "Client",
-    approved: true,
-    featured: false,
-    verified: false,
-  },
 ];
 
 export const testimonials = publicOnly(allTestimonials).filter((t) => t.approved);

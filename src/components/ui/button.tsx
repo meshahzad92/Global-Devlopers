@@ -4,26 +4,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-[13px] font-medium transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        gold: "bg-gold text-forest-deep hover:bg-gold-light shadow-sm",
-        outlineLight: "border border-on-dark/60 text-on-dark hover:bg-on-dark hover:text-forest-deep",
-        outlineGold: "border border-gold text-forest-deep hover:bg-gold",
-        outline: "border border-forest/30 text-forest hover:bg-forest hover:text-on-dark",
-        forest: "bg-forest text-on-dark hover:bg-forest-deep",
-        ghost: "text-forest hover:bg-muted",
-        link: "px-0 text-forest underline-offset-4 hover:underline",
+        default: "bg-primary text-primary-foreground hover:bg-forest-deep",
+        gold: "bg-gold text-forest-deep hover:bg-gold-soft shadow-sm",
+        outlineLight: "border border-on-dark/40 text-on-dark hover:border-gold hover:text-gold",
+        outline: "border border-forest/30 text-forest hover:border-gold hover:text-gold",
+        ghost: "hover:bg-muted",
+        link: "text-forest underline-offset-4 hover:underline",
       },
       size: {
-        sm: "h-9 px-4 text-xs",
         default: "h-11 px-6",
-        lg: "h-12 px-8 text-sm",
-        icon: "size-10",
+        sm: "h-9 px-4 text-xs",
+        lg: "h-12 px-8",
+        icon: "h-10 w-10",
       },
     },
-    defaultVariants: { variant: "gold", size: "default" },
+    defaultVariants: { variant: "default", size: "default" },
   },
 );
 
@@ -33,9 +32,9 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-export function Button({ className, variant, size, asChild = false, ...props }: ButtonProps) {
+function Button({ className, variant, size, asChild = false, ...props }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
   return <Comp className={cn(buttonVariants({ variant, size, className }))} {...props} />;
 }
 
-export { buttonVariants };
+export { Button, buttonVariants };

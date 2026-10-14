@@ -76,7 +76,7 @@ export default async function ProjectPage({ params }: Props) {
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-center gap-3 rounded-sm border bg-card px-4 py-3 text-sm">
-                      <span className="grid size-6 place-items-center rounded-full bg-gold/20 text-gold-deep"><Check className="size-3.5" aria-hidden="true" /></span>
+                      <span className="grid size-6 place-items-center rounded-full bg-gold/20 text-gold"><Check className="size-3.5" aria-hidden="true" /></span>
                       {f}
                     </li>
                   ))}

@@ -29,7 +29,7 @@ export function WhyUs() {
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.06}>
               <div className="flex h-full items-start gap-4 rounded-sm border bg-card p-5 shadow-sm transition-shadow hover:shadow-lg">
-                <span className="grid size-12 shrink-0 place-items-center rounded-sm bg-gold/15 text-gold-deep">
+                <span className="grid size-12 shrink-0 place-items-center rounded-sm bg-gold/15 text-gold">
                   <f.icon className="size-6" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <div>

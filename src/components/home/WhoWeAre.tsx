@@ -13,7 +13,7 @@ export function WhoWeAre() {
           <p className="eyebrow">Who We Are</p>
           <h2 className="mt-4 max-w-md text-4xl leading-[1.15] md:text-[2.75rem]">Shaping Better Communities for a Brighter Tomorrow.</h2>
           <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground">{companyBase.intro}</p>
-          <Link href="/about" className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold-deep">
+          <Link href="/about" className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold">
             Learn More About Us <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </Reveal>

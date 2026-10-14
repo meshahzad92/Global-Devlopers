@@ -77,7 +77,7 @@ export default function LeadershipPage() {
                   <div className="relative aspect-[4/5]"><Image src={m.portrait} alt={`Portrait of ${m.name}`} fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" /></div>
                   <div className="p-5">
                     <h3 className="text-xl">{m.name}</h3>
-                    <p className="text-xs uppercase tracking-wider text-gold-deep">{m.role}</p>
+                    <p className="text-xs uppercase tracking-wider text-gold">{m.role}</p>
                     <p className="mt-3 text-sm text-muted-foreground">{m.bio[0]}</p>
                   </div>
                 </article>

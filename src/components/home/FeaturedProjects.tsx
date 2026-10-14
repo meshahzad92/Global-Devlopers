@@ -12,7 +12,7 @@ export function FeaturedProjects() {
       <div className="container-gd">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHead eyebrow="Featured Projects" title="Our Developments" />
-          <Link href="/projects" className="group inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold-deep">
+          <Link href="/projects" className="group inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold">
             View All Projects <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>

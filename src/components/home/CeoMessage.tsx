@@ -35,7 +35,7 @@ export function CeoMessage() {
             <span aria-hidden="true" className="block font-serif text-6xl leading-none text-gold">&ldquo;</span>
             <blockquote className="mt-2 font-serif text-xl italic leading-relaxed text-foreground/85">&ldquo;{ceo.quote}&rdquo;</blockquote>
             <div className="mt-7">
-              <Button asChild variant="outlineGold">
+              <Button asChild variant="outline">
                 <Link href="/leadership">Meet Our Leadership <ArrowRight /></Link>
               </Button>
             </div>
