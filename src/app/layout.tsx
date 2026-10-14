@@ -7,13 +7,13 @@ import { images } from "@/data/images";
 import { siteUrl } from "@/lib/utils";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"], variable: "--font-cormorant", display: "swap" });
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
+const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-cormorant", display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-manrope", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: `${company.name} — ${company.tagline}`, template: `%s | ${company.name}` },
-  description: company.description,
+  title: { default: `${company.name} — ${company.tagline}`, template: `%s — ${company.name}` },
+  description: "Premium residential and commercial real estate developments by Global Developers.",
   applicationName: company.name,
   openGraph: {
     type: "website",
@@ -43,12 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body>
         <a href="#main" className="sr-only z-[60] bg-gold px-4 py-2 text-forest-deep focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
           Skip to content
         </a>
         <Header />
-        <main id="main" className="flex-1">{children}</main>
+        <main id="main">{children}</main>
         <Footer />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>

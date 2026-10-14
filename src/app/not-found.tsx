@@ -1,19 +1,18 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <section className="bg-forest-deep">
-      <div className="container-gd flex min-h-[60vh] flex-col items-start justify-center py-24">
-        <p className="eyebrow">Error 404</p>
-        <h1 className="mt-4 text-4xl text-on-dark md:text-6xl">This page could not be found.</h1>
-        <p className="mt-5 max-w-lg text-on-dark/80">The page you are looking for may have moved, or the address may be incorrect.</p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Button asChild variant="gold"><Link href="/">Back to Home <ArrowRight /></Link></Button>
-          <Button asChild variant="outlineLight"><Link href="/projects">View Projects</Link></Button>
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <div className="max-w-md text-center">
+        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <p className="mt-2 text-sm text-muted-foreground">The page you&apos;re looking for doesn&apos;t exist or has been moved.</p>
+        <div className="mt-6">
+          <Link href="/" className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+            Go home
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
