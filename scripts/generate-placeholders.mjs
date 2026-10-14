@@ -109,25 +109,6 @@ function portrait({ w, h, seed, label }) {
 </svg>`;
 }
 
-function interior({ w, h, label }) {
-  let panes = "";
-  for (let i = 0; i < 6; i++) {
-    panes += `<rect x="${w * 0.08 + i * w * 0.15}" y="${h * 0.08}" width="${w * 0.14}" height="${h * 0.55}" fill="url(#city)"/>`;
-  }
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
-  <defs>
-    <linearGradient id="city" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7b08a"/><stop offset="1" stop-color="#f0d8a8"/></linearGradient>
-    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1f17"/><stop offset="1" stop-color="#4a3626"/></linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="url(#room)"/>${panes}
-  <rect y="${h * 0.63}" width="${w}" height="${h * 0.37}" fill="#3b2a1d"/>
-  <rect x="${w * 0.15}" y="${h * 0.7}" width="${w * 0.35}" height="${h * 0.12}" rx="12" fill="#2e3b33"/>
-  <rect x="${w * 0.58}" y="${h * 0.72}" width="${w * 0.25}" height="${h * 0.1}" rx="10" fill="#2e3b33"/>
-  <ellipse cx="${w * 0.5}" cy="${h * 0.87}" rx="${w * 0.12}" ry="${h * 0.03}" fill="#c4a574" opacity="0.6"/>
-  <text x="${w - 20}" y="${h - 16}" text-anchor="end" font-family="Helvetica, Arial" font-size="${Math.round(w / 60)}" fill="#ffffff" opacity="0.4">PLACEHOLDER · ${label}</text>
-</svg>`;
-}
-
 const jobs = [
   ["hero/about.jpg", skyline({ w: 1400, h: 1000, seed: 21, sky: ["#4c6a6a", "#a8a289", "#efd7a6"], label: "about" })],
   ["construction/site-1.jpg", construction({ w: 1200, h: 800, seed: 1, label: "construction 1" })],
